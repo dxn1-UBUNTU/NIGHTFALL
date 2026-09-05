@@ -1,0 +1,1 @@
+import type { InputPoint } from '../shared/types.ts'; export function ssrfCandidates(points:InputPoint[]):InputPoint[]{return points.filter(p=>/url|uri|redirect|callback|webhook|endpoint|target|dest/i.test(p.name))}

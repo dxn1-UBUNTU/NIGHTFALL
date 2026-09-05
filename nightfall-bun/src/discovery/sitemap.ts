@@ -1,0 +1,1 @@
+import { HttpClient } from '../http/client.ts'; export async function sitemap(url:string,http:HttpClient){try{const r=await http.get(new URL('/sitemap.xml',url).toString());return [...r.body.matchAll(/<loc>([^<]+)<\/loc>/gi)].map(x=>x[1].trim()).filter(Boolean)}catch{return[]}}

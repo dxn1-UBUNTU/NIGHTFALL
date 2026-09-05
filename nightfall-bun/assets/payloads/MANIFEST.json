@@ -1,0 +1,12 @@
+{
+  "name": "NIGHTFALL safe probe corpus",
+  "version": "0.2.0",
+  "files": 2304,
+  "families": {
+    "xss": 1280,
+    "sqli": 1024
+  },
+  "loading": "lazy-file-per-probe",
+  "ordering": "stage then filename",
+  "note": "This corpus contains non-executing reflection/context canaries and SQL parser/error probes. It does not contain credential bypass, data-exfiltration, destructive, persistence, or automated WAF-evasion payloads."
+}

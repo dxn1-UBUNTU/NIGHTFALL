@@ -1,0 +1,1 @@
+{"id":"sqli-0687","family":"sqli","stage":5,"label":"DB parser boundary canary","value":"NFSQL-0687)\"","intent":"Detect parser/error handling differences using non-auth-bypass syntax probes; never attempts UNION, stacked queries, or credential extraction.","safe":true}

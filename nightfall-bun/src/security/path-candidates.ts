@@ -1,0 +1,1 @@
+import type { InputPoint } from '../shared/types.ts'; export function pathCandidates(routes:{url:string}[]):InputPoint[]{const out:InputPoint[]=[];for(const r of routes){const u=new URL(r.url);for(const part of u.pathname.split('/').filter(Boolean)){if(/(?:path|file|dir|page|template|redirect|url)/i.test(part))out.push({pageUrl:r.url,kind:'path',name:part})}}return out}

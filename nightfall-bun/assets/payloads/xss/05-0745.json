@@ -1,0 +1,1 @@
+{"id":"xss-0745","family":"xss","stage":5,"label":"Encoded/context boundary canary","value":"NF-XSS-0745%3C%3E%22%27","intent":"Detect reflection and encoding-context changes without executable script or event-handler syntax.","safe":true}

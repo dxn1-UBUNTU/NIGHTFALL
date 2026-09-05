@@ -1,0 +1,2 @@
+import type { UiState } from '../state.ts'; import { A,pad } from '../ansi.ts';
+export function render(s:UiState,w:number,h:number):string[]{const out=[A.bold+'Probe activity'+A.reset,'',A.dim+'STAGE'.padEnd(8)+'FAMILY'.padEnd(10)+'MATCH'.padEnd(8)+'FILE / PARAMETER'+A.reset];for(const p of s.probes.slice(-h+4).reverse())out.push(pad(String(p.stage),8)+pad(p.family,10)+pad(p.matched?'YES':'—',8)+(p.file+' '+(p.parameter??'')).slice(0,w-26));if(!s.probes.length)out.push(A.dim+'No probes executed.'+A.reset);return out}

@@ -1,0 +1,2 @@
+export const A={reset:'\x1b[0m',bold:'\x1b[1m',dim:'\x1b[2m',cyan:'\x1b[36m',green:'\x1b[32m',yellow:'\x1b[33m',red:'\x1b[31m',magenta:'\x1b[35m',blue:'\x1b[34m',white:'\x1b[37m',bg:'\x1b[48;5;236m',clear:'\x1b[2J\x1b[H',hide:'\x1b[?25l',show:'\x1b[?25h',alt:'\x1b[?1049h',normal:'\x1b[?1049l'};
+export function fg(code:string,s:string){return code+s+A.reset} export function pad(s:string,n:number){return s.slice(0,n).padEnd(n)} export function boxLine(width:number,left='─',right='─'){return left+'─'.repeat(Math.max(0,width-2))+right}

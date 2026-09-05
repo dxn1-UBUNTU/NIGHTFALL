@@ -1,0 +1,1 @@
+import type { NightfallPlugin } from './types.ts'; export class PluginRegistry{private items=new Map<string,NightfallPlugin>();register(p:NightfallPlugin){this.items.set(p.name,p)}list(){return [...this.items.values()]}}

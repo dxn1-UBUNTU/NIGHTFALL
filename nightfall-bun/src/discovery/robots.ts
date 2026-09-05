@@ -1,0 +1,1 @@
+import { HttpClient } from '../http/client.ts'; export async function robots(url:string,http:HttpClient){try{const r=await http.get(new URL('/robots.txt',url).toString());return r.body.split(/\r?\n/).filter(x=>/^sitemap:/i.test(x)).map(x=>x.split(':').slice(1).join(':').trim()).filter(Boolean)}catch{return[]}}

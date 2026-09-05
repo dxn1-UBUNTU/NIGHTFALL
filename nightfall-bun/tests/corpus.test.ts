@@ -1,0 +1,2 @@
+import { expect,test } from 'bun:test'; import { PayloadStore } from '../src/payloads/store.ts';
+test('corpus is file backed',()=>{const s=new PayloadStore();expect(s.families()).toContain('xss');expect(s.families()).toContain('sqli');expect(s.count('xss')).toBeGreaterThan(1000);expect(s.count('sqli')).toBeGreaterThan(1000);const p=[...s.iterate('xss',2)];expect(p).toHaveLength(2);expect(p[0].file.endsWith('.json')).toBe(true)})

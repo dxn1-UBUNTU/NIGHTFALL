@@ -1,0 +1,1 @@
+export class DiscoveryQueue{private q:string[]=[];private seen=new Set<string>();add(v:string){if(!this.seen.has(v)){this.seen.add(v);this.q.push(v)}}shift(){return this.q.shift()}get size(){return this.q.length}}

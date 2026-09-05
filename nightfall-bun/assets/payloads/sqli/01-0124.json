@@ -1,0 +1,1 @@
+{"id":"sqli-0124","family":"sqli","stage":1,"label":"SQL syntax/error canary","value":"NFSQL-0124']","intent":"Detect parser/error handling differences using non-auth-bypass syntax probes; never attempts UNION, stacked queries, or credential extraction.","safe":true}

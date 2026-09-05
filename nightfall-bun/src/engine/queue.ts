@@ -1,0 +1,2 @@
+export interface Job<T>{id:string;label:string;run:()=>Promise<T>;}
+export class JobQueue<T>{private pending:Job<T>[]=[];private running=0;private readonly concurrency:number;constructor(concurrency=4){this.concurrency=concurrency}add(job:Job<T>){this.pending.push(job)}size(){return this.pending.length}async drain(){const out:T[]=[];const workers=Array.from({length:this.concurrency},async()=>{while(this.pending.length){const job=this.pending.shift()!;this.running++;try{out.push(await job.run())}finally{this.running--;}}});await Promise.all(workers);return out}}

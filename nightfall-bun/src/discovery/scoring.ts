@@ -1,0 +1,1 @@
+import type { AuthSurface, RouteRecord } from '../shared/types.ts'; export const routeScore=(r:RouteRecord)=>r.parameters.length*5+(/(admin|api|auth|login|dashboard)/i.test(r.url)?25:0); export const authScore=(a:AuthSurface)=>a.score;

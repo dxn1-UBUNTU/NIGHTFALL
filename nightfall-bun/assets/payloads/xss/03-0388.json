@@ -1,0 +1,1 @@
+{"id":"xss-0388","family":"xss","stage":3,"label":"HTML/attribute boundary canary","value":"NF-XSS-0388#%26%3C%3E","intent":"Detect reflection and encoding-context changes without executable script or event-handler syntax.","safe":true}

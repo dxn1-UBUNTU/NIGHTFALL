@@ -1,0 +1,15 @@
+{
+  "name": "nightfall-security-workstation",
+  "version": "0.4.1",
+  "private": true,
+  "description": "Safe-by-default terminal security assessment workstation powered by Bun.",
+  "type": "module",
+  "scripts": {
+    "start": "bun src/main.ts",
+    "dev": "bun --watch src/main.ts",
+    "test": "bun test",
+    "lint": "bun x biome check src tests",
+    "fmt": "bun x biome format --write src tests",
+    "build": "bun build src/main.ts --compile --outfile dist/nightfall"
+  }
+}

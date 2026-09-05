@@ -1,0 +1,2 @@
+import type { UiState } from '../state.ts'; import { A,pad } from '../ansi.ts';
+export function render(s:UiState,w:number,h:number):string[]{const out=[A.bold+'Findings'+A.reset,'',A.dim+'SEV'.padEnd(10)+'MODULE'.padEnd(22)+'TITLE'+A.reset];for(const f of s.findings.slice(-h+4).reverse())out.push(pad(f.severity.toUpperCase(),10)+pad(f.module,22)+f.title.slice(0,w-34));if(!s.findings.length)out.push(A.dim+'No findings yet.'+A.reset);return out}

@@ -1,0 +1,2 @@
+export interface Args { url?:string; headless:boolean; printConfig:boolean; version:boolean; }
+export function parseArgs(argv:string[]):Args{const out:Args={headless:false,printConfig:false,version:false};for(let i=0;i<argv.length;i++){const a=argv[i];if(a==='--url'||a==='-u')out.url=argv[++i];else if(a==='--headless')out.headless=true;else if(a==='--print-config')out.printConfig=true;else if(a==='--version'||a==='-v')out.version=true;}return out;}

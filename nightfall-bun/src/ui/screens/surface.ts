@@ -1,0 +1,2 @@
+import type { UiState } from '../state.ts'; import { A,pad } from '../ansi.ts';
+export function render(s:UiState,w:number,h:number):string[]{const out:string[]=[A.bold+'Routes & test points'+A.reset,'',A.dim+'HOST'.padEnd(28)+'STATUS'.padEnd(9)+'DEPTH'.padEnd(7)+'PARAMETERS'+A.reset];for(const r of s.routes.slice(-h+4).reverse())out.push(pad(r.host,28)+pad(String(r.status??'-'),9)+pad(String(r.depth),7)+r.parameters.join(', ').slice(0,Math.max(1,w-46)));if(!s.routes.length)out.push(A.dim+'No routes discovered yet.'+A.reset);return out}

@@ -1,0 +1,2 @@
+import { expect,test } from 'bun:test'; import { extractForms } from '../src/http/html.ts';
+test('maps password and identity fields without injecting',()=>{const forms=extractForms('<form action="/login"><input name="email" type="email"><input name="password" type="password"><input name="csrf" type="hidden"></form>','https://example.test/login');expect(forms[0].auth?.passwordFields.length).toBe(1);expect(forms[0].auth?.identityFields.length).toBe(1);expect(forms[0].inputs.some(x=>x.password)).toBe(true)})
