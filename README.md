@@ -2,6 +2,26 @@
 
 NIGHTFALL is a terminal security assessment workstation for systems you own or have explicit permission to assess. The design goal is a clean, keyboard-driven TUI with a real attack-surface map underneath it.
 
+## Install
+
+Requires [Bun](https://bun.sh/). Both methods install the `nightfall` binary to `~/.local/bin`.
+
+Via `git clone`:
+
+```bash
+git clone https://github.com/dxn1-UBUNTU/NIGHTFALL.git
+cd NIGHTFALL
+./install.sh
+```
+
+Via `curl`:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/dxn1-UBUNTU/NIGHTFALL/main/install.sh | bash
+```
+
+The `curl` installer clones the latest `main` into `~/.local/share/nightfall` (override with `NIGHTFALL_HOME`) and builds the binary there.
+
 ## What is new in 0.4
 
 - Domain-root authorization with automatic subdomain scoping; accepted subdomains are independently resolved, checked, and crawled within the host budget.
@@ -27,17 +47,23 @@ The shipped XSS and SQLi corpora are non-executing / non-auth-bypass canaries in
 ## Run
 
 ```bash
-bun install
-bun src/main.ts
-```
-
-Then just run:
-
-```bash
 nightfall
 ```
 
+Add `$HOME/.local/bin` to your `PATH` if the install script reports it is missing:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
 Use `a` from the Targets screen to add an authorized root, then `Enter` to start discovery.
+
+To run from a clone without installing (dev mode):
+
+```bash
+bun install
+bun src/main.ts
+```
 
 ## Headless
 
